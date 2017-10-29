@@ -5,8 +5,7 @@
  */
 package calculadora;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Metodos.Validador;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,6 +25,10 @@ public class calculadora extends javax.swing.JFrame {
      */
     public calculadora() {
         initComponents();
+        dialogo.setSize(400, 300);
+        dialogo.setLocationRelativeTo(this);
+        dialogo.setTitle("Inicio de Sesión");
+        dialogo.setVisible(true);
     }
 
     /**     
@@ -37,6 +40,12 @@ public class calculadora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dialogo = new javax.swing.JDialog();
+        txt_pass = new javax.swing.JPasswordField();
+        txt_user = new javax.swing.JTextField();
+        lbl_user = new javax.swing.JLabel();
+        lbl_pass = new javax.swing.JLabel();
+        btn_ok = new javax.swing.JButton();
         jtxt_calcu = new javax.swing.JTextField();
         jtxt_todo = new javax.swing.JTextField();
         btn1 = new javax.swing.JButton();
@@ -59,6 +68,50 @@ public class calculadora extends javax.swing.JFrame {
         btn_ce = new javax.swing.JButton();
         btn_backsp = new javax.swing.JButton();
         btn_opuesto = new javax.swing.JButton();
+
+        lbl_user.setText("Usuario");
+
+        lbl_pass.setText("Contraseña");
+
+        btn_ok.setText("Ingresar");
+        btn_ok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_okActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout dialogoLayout = new javax.swing.GroupLayout(dialogo.getContentPane());
+        dialogo.getContentPane().setLayout(dialogoLayout);
+        dialogoLayout.setHorizontalGroup(
+            dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialogoLayout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_user, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_pass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_ok, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txt_user, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                        .addComponent(txt_pass)))
+                .addGap(90, 90, 90))
+        );
+        dialogoLayout.setVerticalGroup(
+            dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogoLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbl_user, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_user, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(dialogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(lbl_pass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btn_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
@@ -264,17 +317,17 @@ public class calculadora extends javax.swing.JFrame {
                             .addComponent(btn_prod, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_div1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jtxt_calcu))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(62, Short.MAX_VALUE)
+                    .addContainerGap(58, Short.MAX_VALUE)
                     .addComponent(jtxt_todo, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(63, 63, 63)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+                .addContainerGap(87, Short.MAX_VALUE)
                 .addComponent(jtxt_calcu, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -311,7 +364,7 @@ public class calculadora extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(28, 28, 28)
                     .addComponent(jtxt_todo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(242, Short.MAX_VALUE)))
+                    .addContainerGap(266, Short.MAX_VALUE)))
         );
 
         pack();
@@ -463,6 +516,14 @@ public class calculadora extends javax.swing.JFrame {
     private void btn_ceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_ceActionPerformed
+
+    private void btn_okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_okActionPerformed
+        Validador vl = new Validador();
+        if(vl.validarLogin(calculadora.txt_user, calculadora.txt_pass)){
+            dialogo.setVisible(false);
+            this.setVisible(true);
+        }
+    }//GEN-LAST:event_btn_okActionPerformed
     
     public String calc (String memoria1, String signo, String memoria2)throws ArithmeticException {
         Double resultado=0.0;
@@ -496,15 +557,6 @@ public class calculadora extends javax.swing.JFrame {
         flag=false;
         return jtxt_calcu.getText() ;
     }
-    
-    
-    /*public boolean nuevaCuenta() {
-    if (!jtxt_calcu.getText().equals("")){
-        jtxt_calcu.setText("");
-        jtxt_todo.setText("");
-        }    
-    return true;
-} */
 
     /**
      * @param args the command line arguments
@@ -536,7 +588,7 @@ public class calculadora extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new calculadora().setVisible(true);
+                new calculadora().setVisible(false);
             }
         });
     }
@@ -557,12 +609,18 @@ public class calculadora extends javax.swing.JFrame {
     private javax.swing.JButton btn_ce;
     private javax.swing.JButton btn_div1;
     private javax.swing.JButton btn_igual;
+    private javax.swing.JButton btn_ok;
     private javax.swing.JButton btn_opuesto;
     private javax.swing.JButton btn_prod;
     private javax.swing.JButton btn_punto;
     private javax.swing.JButton btn_resta;
     private javax.swing.JButton btn_suma;
+    private javax.swing.JDialog dialogo;
     private javax.swing.JTextField jtxt_calcu;
     private javax.swing.JTextField jtxt_todo;
+    private javax.swing.JLabel lbl_pass;
+    private javax.swing.JLabel lbl_user;
+    public static javax.swing.JPasswordField txt_pass;
+    public static javax.swing.JTextField txt_user;
     // End of variables declaration//GEN-END:variables
 }
