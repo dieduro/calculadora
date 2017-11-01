@@ -519,7 +519,7 @@ public class calculadora extends javax.swing.JFrame {
 
     private void btn_okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_okActionPerformed
         Validador vl = new Validador();
-        if(vl.validarLogin(calculadora.txt_user, calculadora.txt_pass)){
+        if(vl.validarLogin(calculadora.txt_user.getText(), calculadora.txt_pass.getText()) == true){
             dialogo.setVisible(false);
             this.setVisible(true);
         }

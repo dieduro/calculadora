@@ -14,7 +14,7 @@ public class myDB {
     
     private final String user = "root";
     private final String pass = "root";
-    private final String conn_string = "jdbc:mysql://localhost:3306/javaLogin";
+    private final String conn_string = "jdbc:mysql://localhost:3306/codoacodo";
          
     
     public Connection conexion() {
@@ -23,7 +23,7 @@ public class myDB {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(this.conn_string,this.user,this.pass);
-            System.out.println("conectado");
+            
         }catch (Exception e) {
             System.out.println(e);
         }

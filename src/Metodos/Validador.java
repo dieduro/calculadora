@@ -24,26 +24,24 @@ public class Validador {
        try {
            myDB basesita = new myDB();
            Connection cn=basesita.conexion();
-           String sql = "SELECT * from usuarios WHERE user= '"+user+"';";
+           String sql = "SELECT * from usuario WHERE user= '"+user+"';";
            Statement stm = cn.createStatement();
            ResultSet rs = stm.executeQuery(sql);
-           
-           if (rs.next()){
-               if (pass.equals(rs.getString("pass")))
-               flag=true;
-           }
-           else {
-               flag=false;
+           System.out.println(pass);
+           while (rs.next()){
+                if (pass.equals(rs.getString("password"))){
+                    flag = true;
+                }
            }
            
-       } catch (Exception e) {
+        } catch (Exception e) {
            JOptionPane.showMessageDialog(null, "Error: " + e);
-       }
+        }
        return flag;
    }
 
-    public boolean validarLogin(JTextField txt_user, JPasswordField txt_pass) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    //public boolean validarLogin(JTextField txt_user, JPasswordField txt_pass) {
+    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
     
 }
